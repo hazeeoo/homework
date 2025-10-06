@@ -17,9 +17,4 @@ int main () {
     if (x - 1 >= 1 && y - 2 >= 1) cnt ++;
 
     cout << cnt;
-
-
-    
-
-
 }

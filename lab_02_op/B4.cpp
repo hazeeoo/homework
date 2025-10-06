@@ -1,34 +1,36 @@
 #include <iostream>
 #include <cmath>
+using namespace std;
 
-int main(void)
-{
-	double a, b, c;
-	bool solved = false;
-
-	std::cin >> a >> b;
-
-	if (a > 0)
-	{
-		std::cout << -std::sqrt(a) << ' ' << std::sqrt(a) << ' ';
-		solved = true;
-	}
-	else if (a == 0)
-	{
-		std::cout << 0 << ' ';
-		solved = true;
-	}
-
-	if (b < 0)
-	{
-		std::cout << -std::sqrt(std::abs(b)) << ' ' << std::sqrt(std::abs(b));
-	}
-	else if (!solved)
-	{
-		std::cout << "no solution";
-	}
-
-	std::cout << std::endl;
-
-	return 0;
+int main() {
+    double a, b;
+    cin >> a >> b;
+    
+    bool has_solutions = false;
+    
+    if (a >= 0) {
+        if (a == 0) {
+            cout << "0 ";
+        } else {
+            double root = sqrt(a);
+            cout << -root << " " << root << " ";
+        }
+        has_solutions = true;
+    }
+    
+    if (b <= 0) {
+        if (b == 0) {
+            if (a != 0) cout << "0 ";
+        } else {
+            double root = sqrt(-b);
+            cout << -root << " " << root << " ";
+        }
+        has_solutions = true;
+    }
+    
+    if (!has_solutions) {
+        cout << "No solution";
+    }
+    
+    return 0;
 }
